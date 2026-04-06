@@ -1,13 +1,22 @@
 # Actions-OpenWrt
 
+[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
+![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
+![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+
 - 作者: [P3TERX](https://github.com/P3TERX)
 - Coder: [P3TERX](https://github.com/P3TERX)
 - 使用GitHub Actions在线编译OpenWrt固件
 - Compile OpenWrt firmware online using GitHub Actions
-
-[![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
-![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Forks&logo=github)
+- 当前`.config`是小米R3G路由器的配置，除默认配置外，我做了如下改动：
+  - 添加主题`luci-theme-argon`并设置默认（在`diy-part2.sh`中设置的）
+  - 移除默认主题`luci-theme-bootstrap`
+  - 添加了如下的插件：
+    - luci-app-aria2
+    - luci-app-hd-idle
+    - luci-app-openclash
+    - luci-app-samba4
+    - luci-app-udpxy
 
 ## 使用方法/Usage
 
@@ -22,6 +31,7 @@
 - 点那个`Run workflow`按钮。
 - 编译成功后，在您编译的工作流最下面的`Artifacts`和`Release`就可以看到打包好的固件，点后面的下载即可。
   - TIPS: 上传到`Release`的功能需要在build-opewrt.yml中将环境变量`UPLOAD_RELEASE`设置为`true`，但是目前运行会报错，所以我关了它。
+- 如果您没有修改`diy-part2.sh`中的lan口地址的话，路由器管理页面地址就是[`http://192.168.5.1`](http://192.168.5.1)，用户名`root`，密码好像没有或者是`password`。
 
 - Fork this repository to your own repository.
 - Set up a development environment by yourself and create your own `.config` file.
@@ -33,6 +43,7 @@
 - Select `Build OpenWrt` on the Actions page.
 - Click the `Run workflow` button.
 - When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+- If you haven't modified the LAN port address in `diy-part2.sh`, the router management page address is `http://192.168.5.1`, with a username of `root` and a password of `password` (or it seems there is no password)
 
 ## 提示/Tips
 
