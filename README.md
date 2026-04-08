@@ -16,7 +16,7 @@
     - luci-app-hd-idle
     - luci-app-openclash
     - luci-app-samba4
-    - luci-app-udpxy
+    - luci-app-vsftpd
 
 ## 使用方法/Usage
 
